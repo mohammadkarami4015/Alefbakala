@@ -3,6 +3,6 @@
     first page
 @stop
 @section('content')
-    @include('content')
     @include('scrollBrand')
+    @include('content')
 @stop

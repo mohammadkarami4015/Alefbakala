@@ -19,27 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3333628-39ae-41f2-810c-51f0ffafb8da" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Models/City.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Code.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Country.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Discount.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/DiscountUsage.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Group.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Message.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Order.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Payment.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/ProductComment.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Setting.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Shop.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/ShopCategory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Subgroup.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/helpers.php" afterDir="false" />
+    <list default="true" id="a3333628-39ae-41f2-810c-51f0ffafb8da" name="Default Changelist" comment="view resource">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/content.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/scrollBrand.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/scrollBrand.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,6 +189,7 @@
       <updated>1608399037966</updated>
       <workItem from="1608399039730" duration="7237000" />
       <workItem from="1608486305834" duration="7053000" />
+      <workItem from="1608573878501" duration="7130000" />
     </task>
     <servers />
   </component>
@@ -222,6 +208,10 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="view resource" />
+    <option name="LAST_COMMIT_MESSAGE" value="view resource" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="429" y="204" key="#Notifications" timestamp="1608399190556">
       <screen x="0" y="0" width="1366" height="728" />
@@ -235,25 +225,29 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1608487529555" />
-    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1608399256356">
+    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1608573985442">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1608399256356" />
+    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1608573985442" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1608575113644">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1608575113644" />
     <state x="517" y="303" key="NewPhpFileDialog" timestamp="1608409314444">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="517" y="303" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1608409314444" />
-    <state x="275" y="113" key="Vcs.Push.Dialog.v2" timestamp="1608410689776">
+    <state x="275" y="113" key="Vcs.Push.Dialog.v2" timestamp="1608574265130">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="113" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1608410689776" />
+    <state x="275" y="113" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1608574265130" />
     <state x="391" y="52" width="583" height="624" key="find.popup" timestamp="1608489184912">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="391" y="52" width="583" height="624" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1608489184912" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1608489237541">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1608575958260">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1608489237541" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1608575958260" />
   </component>
 </project>
