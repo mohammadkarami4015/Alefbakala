@@ -1,38 +1,36 @@
 <div id="product-tab" class="product-tab">
     <ul id="tabs" class="tabs">
-        <li><a href="#tab-featured">ویژه</a></li>
-        <li><a href="#tab-latest">جدیدترین</a></li>
-        <li><a href="#tab-bestseller">پرفروش</a></li>
+        <li><a href="#tab-featured">جدیدترین ها</a></li>
+        <li><a href="#tab-latest">محبوب ترین</a></li>
+        <li><a href="#tab-bestseller">پربازدید ترین ها</a></li>
         <li><a href="#tab-special">پیشنهادی</a></li>
     </ul>
+
     <div id="tab-featured" class="tab_content">
         <div class="owl-carousel product_carousel_tab">
 
-
-
-
-            <div class="product-thumb clearfix">
-                <div class="image"><a href="product.html"><img
-                            src="image/product/apple_cinema_30-220x330.jpg" alt="تی شرت کتان مردانه"
-                            title="تی شرت کتان مردانه" class="img-responsive"/></a></div>
-                <div class="caption">
-                    <h4><a href="product.html">تی شرت کتان مردانه</a></h4>
-                    <p class="price"><span class="price-new">110000 تومان</span> <span
-                            class="price-old">122000 تومان</span><span class="saving">-10%</span></p>
-                </div>
-                <div class="button-group">
-                    <button class="btn-primary" type="button" onClick="cart.add('42');"><span>افزودن به سبد</span>
-                    </button>
-                    <div class="add-to-links">
-                        <button type="button" data-toggle="tooltip" title="افزودن به علاقه مندی ها"
-                                onClick=""><i class="fa fa-heart"></i></button>
-                        <button type="button" data-toggle="tooltip" title="مقایسه این محصول" onClick="">
-                            <i class="fa fa-exchange"></i></button>
+            @foreach($new_shops['items'] as $shop)
+                <div class="product-thumb clearfix">
+                    <div class="image"><a href="product.html"><img
+                                src="image/product/FinePix-Long-Zoom-Camera-220x330.jpg" alt="{{$shop->title}}"
+                                title="{{$shop->title}}" class="img-responsive"/></a></div>
+                    <div class="caption">
+                        <h4><a href="product.html">{{$shop->title}}</a></h4>
+                        <p class="price"><span class="price-new">110000 تومان</span> <span
+                                class="price-old">122000 تومان</span><span class="saving">-10%</span></p>
+                    </div>
+                    <div class="button-group">
+                        <button class="btn-primary" type="button" onClick="cart.add('42');"><span>افزودن به سبد</span>
+                        </button>
+                        <div class="add-to-links">
+                            <button type="button" data-toggle="tooltip" title="افزودن به علاقه مندی ها"
+                                    onClick=""><i class="fa fa-heart"></i></button>
+                            <button type="button" data-toggle="tooltip" title="مقایسه این محصول" onClick="">
+                                <i class="fa fa-exchange"></i></button>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-
+            @endforeach
 
 
         </div>
@@ -40,7 +38,6 @@
 
     <div id="tab-latest" class="tab_content">
         <div class="owl-carousel product_carousel_tab">
-
 
 
             <div class="product-thumb">
@@ -97,7 +94,6 @@
         <div class="owl-carousel product_carousel_tab">
 
 
-
             <div class="product-thumb">
                 <div class="image"><a href="product.html"><img
                             src="image/product/ipod_touch_1-220x330.jpg" alt="سامسونگ گلکسی s7"
@@ -119,8 +115,6 @@
                     </div>
                 </div>
             </div>
-
-
 
 
         </div>
