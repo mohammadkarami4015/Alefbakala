@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Http\Request;
 
 class ProductComment extends Model
 {
@@ -29,7 +28,7 @@ class ProductComment extends Model
         return $this->belongsTo(User::class);
     }
 
-    public static function createNew($productComment,$message)
+    public static function createNew($productComment, $message)
     {
         self::query()->create([
             'shop_id' => auth()->id(),

@@ -192,5 +192,12 @@ class Shop extends Authenticatable
         $this->save();
     }
 
+    public function rate($rate)
+    {
+        $this->rate=( ($this->rate * $this->count_rate ) +$rate )/ ($this->count_rate+1);
+        $this->count_rate=$this->count_rate+1;
+        $this->save();
+    }
+
 
 }

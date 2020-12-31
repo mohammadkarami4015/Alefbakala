@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="/css/responsive-rtl.css"/>
     <link rel="stylesheet" type="text/css" href="/css/stylesheet-skin2.css"/>
 
+
     <!-- CSS Part End-->
 </head>
 <body>
@@ -44,42 +45,11 @@
             <div class="container">
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav">
-                        <li><a class="home_link" title="خانه" href="index.html">خانه</a></li>
-                        <li class="dropdown"><a href="category.html">مد و زیبایی</a>
-                            <div class="dropdown-menu">
-                                <ul>
-                                    <li><a href="category.html">آقایان <span>&rsaquo;</span></a>
-                                        <div class="dropdown-menu">
-                                            <ul>
-                                                <li><a href="category.html">زیردسته ها </a></li>
-                                                <li><a href="category.html">زیردسته ها </a></li>
-                                                <li><a href="category.html">زیردسته ها </a></li>
-                                                <li><a href="category.html">زیردسته ها </a></li>
-                                                <li><a href="category.html">زیردسته جدید </a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li><a href="category.html">بانوان</a></li>
-                                    <li><a href="category.html">دخترانه<span>&rsaquo;</span></a>
-                                        <div class="dropdown-menu">
-                                            <ul>
-                                                <li><a href="category.html">زیردسته ها </a></li>
-                                                <li><a href="category.html">زیردسته جدید</a></li>
-                                                <li><a href="category.html">زیردسته جدید</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li><a href="category.html">پسرانه</a></li>
-                                    <li><a href="category.html">نوزاد</a></li>
-                                    <li><a href="category.html">لوازم <span>&rsaquo;</span></a>
-                                        <div class="dropdown-menu">
-                                            <ul>
-                                                <li><a href="category.html">زیردسته های جدید</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
+                        <li><a class="home_link" title="خانه" href="{{route('home')}}">خانه</a></li>
+                        <li class="dropdown"><a href="{{route('shop.all')}}">بازار</a>
+                        <li class="dropdown"><a href="{{route('shop.all')}}">پروفایل</a>
+                        <li class="dropdown"><a href="{{route('shop.all')}}">نقشه</a>
+
                         </li>
 
                         <li class="custom-link-right"><a href="#" target="_blank"> همین حالا بخرید!</a></li>
@@ -121,6 +91,7 @@
 <script type="text/javascript" src="/js/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/js/jquery.easing-1.3.min.js"></script>
 <script type="text/javascript" src="/js/jquery.dcjqaccordion.min.js"></script>
+@yield('script')
 <script type="text/javascript" src="/js/owl.carousel.min.js"></script>
 <script type="text/javascript" src="/js/custom.js"></script>
 <!-- JS Part End-->

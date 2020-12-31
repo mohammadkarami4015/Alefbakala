@@ -1,6 +1,6 @@
 @extends('main')
 @section('title')
-    first page
+    alefbakala
 @stop
 @section('content')
     @include('scrollBrand')
