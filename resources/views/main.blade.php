@@ -47,12 +47,12 @@
                     <ul class="nav navbar-nav">
                         <li><a class="home_link" title="خانه" href="{{route('home')}}">خانه</a></li>
                         <li class="dropdown"><a href="{{route('shop.all')}}">بازار</a>
+                        <li class="dropdown"><a href="{{route('cart.show')}}">سبد خرید</a>
                         <li class="dropdown"><a href="{{route('shop.all')}}">پروفایل</a>
                         <li class="dropdown"><a href="{{route('shop.all')}}">نقشه</a>
 
                         </li>
 
-                        <li class="custom-link-right"><a href="#" target="_blank"> همین حالا بخرید!</a></li>
                     </ul>
                 </div>
             </div>
@@ -63,6 +63,8 @@
     <div id="container">
 
         <div class="container">
+            @include('error')
+
             <div class="row">
                 <!--Middle Part Start-->
                 <!-- Banner End-->

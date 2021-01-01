@@ -1,8 +1,6 @@
 @extends('main')
 @section('title')
 @stop
-
-
 @section('content')
     <div id="container" style="margin-right: 10%">
         <div class="container">
