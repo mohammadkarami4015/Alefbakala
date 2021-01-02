@@ -17,6 +17,7 @@
                             <td class="text-left">نام محصول</td>
                             <td class="text-left">تعداد</td>
                             <td class="text-right">قیمت واحد</td>
+                            <td class="text-right">قیمت با تخفیف</td>
 
                         </tr>
                         </thead>
@@ -52,6 +53,7 @@
                                         </div>
                                     </td>
 
+                                    <td class="text-right">{{$price=$product->price}}تومان</td>
                                     <td class="text-right">{{$price=$product->price_with_discount}}تومان</td>
 
 

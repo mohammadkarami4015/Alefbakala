@@ -6,6 +6,7 @@ use App\Http\Requests\CartAddRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use PhpParser\Node\Stmt\DeclareDeclare;
 
 class CartController extends Controller
 {
@@ -59,7 +60,44 @@ class CartController extends Controller
 
     public function checkout(Request $request)
     {
+        $orders = collect();
+        $totalPrice = 0;
+        $totalDiscountPrice = 0;
 
+        foreach ($request->get('products') as $key => $id) {
+            $orders->push([
+                'product' => Product::query()->find($id),
+                'count' => $request->get('count')[$key],
+                'total_price' => Product::query()->find($id)->price * $request->get('count')[$key],
+                'total_price_with_discount' => Product::query()->find($id)->price_with_discount * $request->get('count')[$key],
+            ]);
+        }
+
+        foreach ($orders as $key => $order) {
+
+            $totalPrice += $order['total_price'];
+            $totalDiscountPrice += $order['total_price_with_discount'];
+        }
+
+
+        return view('cart.checkout', [
+            'orders' => $orders,
+            'total_price' => $totalPrice,
+            'total_discount_price' => $totalDiscountPrice,
+            'price_difference' => $totalPrice - $totalDiscountPrice
+        ]);
+    }
+
+    public function order(Request $request)
+    {
+        $mergedArray = array_combine($request->get('products'),$request->get('counts'));
+        foreach ($mergedArray as $key=>$value){
+            $array =implode(',',$key);
+        }
+        $array = [];
+        foreach ($request->get('products') as $key => $id) {
+            $array = implode(',', $id);
+        }
 
     }
 }

@@ -20,13 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3333628-39ae-41f2-810c-51f0ffafb8da" name="Default Changelist" comment="view resource">
-      <change afterPath="$PROJECT_DIR$/resources/views/cart/show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/error.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/cart/checkout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/product/details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/product/details.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shop/details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/details.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cart/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cart/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +158,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="ToolWindowFavorites.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/cart" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -173,11 +170,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\xamp\htdocs\alefbasite\resources\views\cart" />
       <recent name="F:\xamp\htdocs\alefbasite\resources\views" />
       <recent name="F:\xamp\htdocs\alefbasite\resources\views\product" />
       <recent name="F:\xamp\htdocs\alefbasite\app\Http\Controllers" />
       <recent name="F:\xamp\htdocs\alefbasite\resources\views\shop" />
-      <recent name="F:\xamp\htdocs\alefbasite\app\Models" />
     </key>
   </component>
   <component name="RunManager">
@@ -206,7 +203,8 @@
       <workItem from="1609354262816" duration="7731000" />
       <workItem from="1609410741337" duration="4507000" />
       <workItem from="1609501623889" duration="7188000" />
-      <workItem from="1609513919884" duration="18525000" />
+      <workItem from="1609513919884" duration="18995000" />
+      <workItem from="1609610111045" duration="8400000" />
     </task>
     <servers />
   </component>
@@ -262,10 +260,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1609513729558" />
-    <state x="275" y="113" key="Vcs.Push.Dialog.v2" timestamp="1609426912747">
+    <state x="275" y="113" key="Vcs.Push.Dialog.v2" timestamp="1609535556557">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="113" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1609426912747" />
+    <state x="275" y="113" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1609535556557" />
     <state x="500" y="274" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609513726868">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -278,9 +276,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="391" y="52" width="583" height="624" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1608913440348" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1609531494487">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1609619101567">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1609531494487" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1609619101567" />
   </component>
 </project>

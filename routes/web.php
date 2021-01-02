@@ -44,6 +44,7 @@ Route::prefix('/cart')->group(function (){
     Route::get('/delete/{id}',[CartController::class,'delete'])->name('cart.delete');
 
     Route::post('/checkout',[CartController::class,'checkout'])->name('cart.checkout');
+    Route::post('/order',[CartController::class,'order'])->name('cart.order');
 
 
 });
