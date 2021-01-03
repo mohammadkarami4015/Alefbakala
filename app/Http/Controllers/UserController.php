@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
 
-    public function init(Request $request)
+    public function init()
     {
         $settings = Setting::all();
         $user = User::query()->find(1);
@@ -50,5 +50,14 @@ class UserController extends Controller
                 "items" => $most_viewed_shops
             ],
         ]);
+    }
+
+    public function profile()
+    {
+        $user = User::query()->find(1);
+
+        $orders = Order::query()->where('user_id', $user->id)->orderByDesc('id')->get();
+
+        return view('profile', compact('orders'));
     }
 }

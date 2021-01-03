@@ -67,87 +67,12 @@
 
                         </tbody>
                     </table>
-
-
+                    @if($products)
                         <button style="border-radius: 5px" class="pull-right btn btn-primary">ادامه خرید</button>
 
-
+                    @endif
                 </form>
             </div>
-
-
-            {{--            <h2 class="subtitle">حالا مایلید چه کاری انجام دهید؟</h2>--}}
-            {{--            <p>در صورتی که کد تخفیف در اختیار دارید میتوانید از آن در اینجا استفاده کنید.</p>--}}
-            {{--            <div class="row">--}}
-            {{--                <div class="col-sm-6">--}}
-            {{--                    <div class="panel panel-default">--}}
-            {{--                        <div class="panel-heading">--}}
-            {{--                            <h4 class="panel-title">استفاده از کوپن تخفیف</h4>--}}
-            {{--                        </div>--}}
-            {{--                        <div id="collapse-coupon" class="panel-collapse collapse in">--}}
-            {{--                            <div class="panel-body">--}}
-            {{--                                <label class="col-sm-4 control-label" for="input-coupon">کد تخفیف خود را در اینجا وارد--}}
-            {{--                                    کنید</label>--}}
-            {{--                                <div class="input-group">--}}
-            {{--                                    <input type="text" name="coupon" value=""--}}
-            {{--                                           placeholder="کد تخفیف خود را در اینجا وارد کنید" id="input-coupon"--}}
-            {{--                                           class="form-control"/>--}}
-            {{--                                    <span class="input-group-btn">--}}
-            {{--                      <input type="button" value="اعمال کوپن" id="button-coupon" data-loading-text="بارگذاری ..."--}}
-            {{--                             class="btn btn-primary"/>--}}
-            {{--                      </span></div>--}}
-            {{--                            </div>--}}
-            {{--                        </div>--}}
-            {{--                    </div>--}}
-            {{--                </div>--}}
-
-            {{--            </div>--}}
-            {{--            <div class="panel panel-default">--}}
-            {{--                <div class="panel-heading">--}}
-            {{--                    <h4 class="panel-title">آدرس</h4>--}}
-            {{--                </div>--}}
-            {{--                <div id="collapse-shipping" class="panel-collapse collapse in">--}}
-            {{--                    <div class="panel-body">--}}
-            {{--                        <p>آدرس خود را به صورت کامل وارد کنید.</p>--}}
-
-            {{--                        <div class="form-group required">--}}
-            {{--                            <label class="col-sm-2 control-label" for="input-postcode">آدرس </label>--}}
-            {{--                            <div class="col-sm-10">--}}
-            {{--                                <input type="text" name="address" placeholder=""--}}
-            {{--                                       id="input-postcode" class="form-control"/>--}}
-            {{--                            </div>--}}
-            {{--                        </div>--}}
-
-
-            {{--                    </div>--}}
-            {{--                </div>--}}
-            {{--            </div>--}}
-            {{--            <div class="row">--}}
-            {{--                <div class="col-sm-4 col-sm-offset-8">--}}
-            {{--                    <table class="table table-bordered">--}}
-            {{--                        <tr>--}}
-            {{--                            <td class="text-right"><strong>جمع کل:</strong></td>--}}
-            {{--                            <td class="text-right">132000 تومان</td>--}}
-            {{--                        </tr>--}}
-            {{--                        <tr>--}}
-            {{--                            <td class="text-right"><strong>کسر هدیه:</strong></td>--}}
-            {{--                            <td class="text-right">4000 تومان</td>--}}
-            {{--                        </tr>--}}
-            {{--                        <tr>--}}
-            {{--                            <td class="text-right"><strong>مالیات:</strong></td>--}}
-            {{--                            <td class="text-right">11880 تومان</td>--}}
-            {{--                        </tr>--}}
-            {{--                        <tr>--}}
-            {{--                            <td class="text-right"><strong>کل :</strong></td>--}}
-            {{--                            <td class="text-right">139880 تومان</td>--}}
-            {{--                        </tr>--}}
-            {{--                    </table>--}}
-            {{--                </div>--}}
-            {{--            </div>--}}
-            {{--            <div class="buttons">--}}
-            {{--                <div class="pull-left"><a href="index.html" class="btn btn-default">ادامه خرید</a></div>--}}
-            {{--                <div class="pull-right"><a href="checkout.html" class="btn btn-primary">تسویه حساب</a></div>--}}
-            {{--            </div>--}}
         </div>
         <!--Middle Part End -->
     </div>

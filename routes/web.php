@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [UserController::class, 'init'])->name('home');
 
+Route::get('/profile', [UserController::class, 'profile'])->name('user.profile');
+
 Route::prefix('/shop')->group(function () {
     Route::get('/', [ShopController::class, 'showAll'])->name('shop.all');
 
@@ -45,6 +47,5 @@ Route::prefix('/cart')->group(function (){
 
     Route::post('/checkout',[CartController::class,'checkout'])->name('cart.checkout');
     Route::post('/order',[CartController::class,'order'])->name('cart.order');
-
 
 });

@@ -35,15 +35,5 @@ class ShopController extends Controller
         ]);
     }
 
-    public function rate(Request $request)
-    {
-        $shop = Shop::find($request->shop_id);
-        if ($shop) {
-            $shop->rate($request->rate);
-            return prepareResult("success", new ShopResource($shop), "shop data", []);
-        } else {
-            return prepareResult("error", [], "shop not found", []);
-        }
-    }
 
 }

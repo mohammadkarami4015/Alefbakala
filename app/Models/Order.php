@@ -43,9 +43,30 @@ class Order extends Model
 
             });
 
-
-
         return $query;
+    }
+
+   public static function orderStatus($id)
+    {
+        switch ($id) {
+            case 1:
+                return 'ثبت شد';
+            case 2:
+                return 'تایید شد';
+
+            case 3:
+                return 'ارسال شد';
+
+            case 4:
+                return 'تحویل داده شد';
+
+            case 5:
+                return 'لغو شد';
+            case 6:
+                return 'مرجوعی';
+            case 7:
+                return 'لغو توسط کاربر';
+        }
     }
 
 }

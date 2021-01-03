@@ -17,6 +17,7 @@
                         <tr>
                             <td class="text-center">تصویر</td>
                             <td class="text-left">نام محصول</td>
+                            <td class="text-left">نام فروشگاه</td>
                             <td class="text-left">تعداد</td>
                             <td class="text-right">قیمت واحد</td>
                             <td class="text-right">قیمت کل</td>
@@ -37,6 +38,7 @@
                                     </td>
                                     <input type="hidden" name="products[]" value="{{$order['product']->id}}">
                                     <input type="hidden" name="counts[]" value="{{$order['count']}}">
+                                    <input type="hidden" name="shop_id[]" value="{{$order['shop_id']}}">
 
                                     <td class="text-left"><a href="#">{{$order['product']->title}}</a><br/>
                                         <small> موجودی: {{$order['product']->inventory}}</small>
@@ -46,7 +48,7 @@
                                             {{$order['count']}}
                                         </div>
                                     </td>
-
+                                    <td class="text-right">{{\App\Models\Shop::query()->find($order['shop_id'])->title}}</td>
                                     <td class="text-right">{{$order['product']->price}}تومان</td>
                                     <td class="text-right">{{$order['total_price']}}تومان</td>
                                     <td class="text-right">{{$order['total_price_with_discount']}}تومان</td>
@@ -105,8 +107,31 @@
                                     <label class="col-sm-4 control-label" for="input-coupon">آدرس خود را وارد کنید
                                     </label>
                                     <div class="input-group col-sm-8">
-                                        <input type="text" name="address" value=""
+                                        <input required type="text" name="address" value=""
                                                placeholder="آدرس" id="input-coupon"
+                                               class="form-control"/>
+                                        <span class="input-group-btn">
+
+                                  </span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">هزینه ارسال</h4>
+                            </div>
+                            <div id="collapse-coupon" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <label class="col-sm-4 control-label" for="input-coupon">هزینه ارسال را وارد کنید
+                                    </label>
+                                    <div class="input-group col-sm-8">
+                                        <input required type="text" name="send_price" value=""
+                                               placeholder="هزینه ارسال" id="input-coupon"
                                                class="form-control"/>
                                         <span class="input-group-btn">
 
@@ -151,7 +176,7 @@
                                     <label class="col-sm-4 control-label" for="input-coupon">ارسال فاکتور توسط فروشگاه
                                     </label>
                                     <div class="input-group col-sm-2">
-                                        <input type="checkbox" name="facture_flag" value=""
+                                        <input type="checkbox" name="facture_flag" value="true"
                                                placeholder="آدرس" id="input-coupon"
                                                class="form-control"/>
                                         <span class="input-group-btn">

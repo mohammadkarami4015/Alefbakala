@@ -48,7 +48,7 @@
                         <li><a class="home_link" title="خانه" href="{{route('home')}}">خانه</a></li>
                         <li class="dropdown"><a href="{{route('shop.all')}}">بازار</a>
                         <li class="dropdown"><a href="{{route('cart.show')}}">سبد خرید</a>
-                        <li class="dropdown"><a href="{{route('shop.all')}}">پروفایل</a>
+                        <li class="dropdown"><a href="{{route('user.profile')}}">پروفایل</a>
                         <li class="dropdown"><a href="{{route('shop.all')}}">نقشه</a>
 
                         </li>

@@ -1,7 +1,7 @@
 <?php
 
 
-use App\Models\Code;
+use App\Code;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\File;
 

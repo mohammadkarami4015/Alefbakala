@@ -115,6 +115,7 @@
                                         @csrf
                                         <div  class="form">
                                             <input type="hidden" name="product_id" value="{{$product->id}}">
+                                            <input type="hidden" name="shop_id" value="{{$product->shop_id}}">
                                             <div style="width: 60%">
                                                 <input name="count" class="form-control" type="number" min="0" max="{{$product->inventory}}"
                                                        placeholder="تعداد">

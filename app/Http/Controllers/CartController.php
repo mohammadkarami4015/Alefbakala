@@ -3,23 +3,30 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CartAddRequest;
+use App\Http\Requests\OrderRequest;
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use PhpParser\Node\Stmt\DeclareDeclare;
 
 class CartController extends Controller
 {
     public function add(CartAddRequest $request)
     {
-        if (!Session::has('order'))
-            Session::put('order', []);
+        $product = Product::query()->find($request->get('product_id'));
 
-        Session::push('order.product', Product::query()->find($request->get('product_id')));
+
+        if (Session::get('order.shop_id.0') !=null && Session::get('order.shop_id.0')!= $product->shop_id)
+            return back()->withErrors('شما نمیتوانید از چند فروشگاه خرید کنید');
+
+        Session::push('order.product', $product);
+
+        Session::push('order.shop_id', $product->shop_id);
 
         Session::push('order.count', $request->get('count'));
 
         return back()->withErrors('محصول مورد نظر به سبد خرید شما افزوده شد.با مرجعه به بخش سبد خرید میتوانید سفارشات خود را کامل کنید');
+
 
     }
 
@@ -30,7 +37,7 @@ class CartController extends Controller
 
         return view('cart.show', [
             'products' => $orders['product'],
-            'count' => $orders['count']
+            'count' => $orders['count'],
         ]);
     }
 
@@ -63,41 +70,71 @@ class CartController extends Controller
         $orders = collect();
         $totalPrice = 0;
         $totalDiscountPrice = 0;
+        if ($request->get('products')) {
+            foreach ($request->get('products') as $key => $id) {
+                $orders->push([
+                    'product' => $product = Product::query()->find($id),
+                    'shop_id' => $product->shop_id,
+                    'count' => $request->get('count')[$key],
+                    'total_price' => Product::query()->find($id)->price * $request->get('count')[$key],
+                    'total_price_with_discount' => Product::query()->find($id)->price_with_discount * $request->get('count')[$key],
+                ]);
+            }
 
-        foreach ($request->get('products') as $key => $id) {
-            $orders->push([
-                'product' => Product::query()->find($id),
-                'count' => $request->get('count')[$key],
-                'total_price' => Product::query()->find($id)->price * $request->get('count')[$key],
-                'total_price_with_discount' => Product::query()->find($id)->price_with_discount * $request->get('count')[$key],
+            foreach ($orders as $key => $order) {
+
+                $totalPrice += $order['total_price'];
+                $totalDiscountPrice += $order['total_price_with_discount'];
+            }
+
+            return view('cart.checkout', [
+                'orders' => $orders,
+                'total_price' => $totalPrice,
+                'total_discount_price' => $totalDiscountPrice,
+                'price_difference' => $totalPrice - $totalDiscountPrice
             ]);
+        } else {
+            return back()->withErrors('سبد خرید شما خالی است');
         }
 
-        foreach ($orders as $key => $order) {
-
-            $totalPrice += $order['total_price'];
-            $totalDiscountPrice += $order['total_price_with_discount'];
-        }
-
-
-        return view('cart.checkout', [
-            'orders' => $orders,
-            'total_price' => $totalPrice,
-            'total_discount_price' => $totalDiscountPrice,
-            'price_difference' => $totalPrice - $totalDiscountPrice
-        ]);
     }
 
-    public function order(Request $request)
+    public function order(OrderRequest $request)
     {
-        $mergedArray = array_combine($request->get('products'),$request->get('counts'));
-        foreach ($mergedArray as $key=>$value){
-            $array =implode(',',$key);
-        }
-        $array = [];
-        foreach ($request->get('products') as $key => $id) {
-            $array = implode(',', $id);
+        $temp = [];
+        $temp1 = [];
+
+        for ($i = 0; $i < count($request->get('products')); $i++) {
+            array_push($temp, [$request->get('products')[$i], $request->get('counts')[$i]]);
+            array_push($temp1, implode(',', $temp[$i]));
         }
 
+        $products = implode(';', $temp1);
+
+
+        $order = Order::query()->create([
+            'total_price' => $request->get('total_discount_price'),
+            'send_price' => $request->get('send_price'),
+            'payed_price' => $request->get('total_discount_price') + $request->get('send_price'),
+            'products' => $products,
+            'order_status' => '1',
+            'shop_id' =>  $request->get('shop_id')[0],
+            'address' => $request->get('address'),
+            'payment_flag' => 'waiting',
+            'desc' => $request->get('desc'),
+            'send_date' => $request->get('send_date'),
+            'send_time' => $request->get('send_time'),
+            'facture_flag' => $request->get('facture_flag') ? true : false,
+            'payment_type' => $request->get('payment_type'),
+            'user_id' =>1,
+        ]);
+        dd($order);
+
+        if ($order) {
+            Session::forget('order');
+            Session::save();
+            return redirect(route('cart.show'))->withErrors('سفارش شما با موفقیت ثبت شد');
+        } else
+            return back()->withErrors('سفارش شما ثبت نشد');
     }
 }
