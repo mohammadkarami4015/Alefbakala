@@ -12,7 +12,7 @@ class ProductsController extends Controller
 
     public function index(Shop $shop)
     {
-        $products = $shop->products()->latest()->paginate(30);
+        $products = $shop->products()->latest()->get();
         return view('product.index', [
             'shop' => $shop,
             'products' => $products,
@@ -34,14 +34,12 @@ class ProductsController extends Controller
 
     public function detail(Shop $shop, Product $product)
     {
-
-
         return view('product.details', [
             'shop' => $shop,
             'product' => $product,
-            'photos' => explode(';', $product->photo),
+            'photos' => explode(';', $product->photos),
             'features' => explode(';', $product->features),
-            'category'=>ShopCategory::query()->find($product->shop_category_id)->title
+            'category' =>ShopCategory::query()->find($product->shop_category_id) ? ShopCategory::query()->find($product->shop_category_id)->title  : '',
         ]);
     }
 

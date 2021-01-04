@@ -2,8 +2,8 @@
 <div id="carousel" class="owl-carousel nxt">
     @foreach($slider as $shop)
         <div class="product-thumb clearfix" >
-            <div class="image"><a href="{{route('shop.details',$shop)}}"><img
-                        src="image/product/FinePix-Long-Zoom-Camera-220x330.jpg" alt="{{$shop->title}}"
+            <div style="min-height: 200px;max-height: 350px" class="image"><a href="{{route('shop.details',$shop)}}"><img
+                        src="/{{$shop->logo}}" alt="{{$shop->title}}"
                         title="{{$shop->title}}" class="img-responsive"/></a></div>
             <div class="caption">
                 <h4> {{$shop->title}}</h4>

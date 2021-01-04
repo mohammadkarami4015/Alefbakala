@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CartAddRequest;
+use App\Http\Requests\CartCheckoutRequest;
 use App\Http\Requests\OrderRequest;
 use App\Models\Order;
 use App\Models\Product;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
@@ -15,8 +15,7 @@ class CartController extends Controller
     {
         $product = Product::query()->find($request->get('product_id'));
 
-
-        if (Session::get('order.shop_id.0') !=null && Session::get('order.shop_id.0')!= $product->shop_id)
+        if (Session::get('order.shop_id.0') != null && Session::get('order.shop_id.0') != $product->shop_id)
             return back()->withErrors('شما نمیتوانید از چند فروشگاه خرید کنید');
 
         Session::push('order.product', $product);
@@ -25,7 +24,9 @@ class CartController extends Controller
 
         Session::push('order.count', $request->get('count'));
 
-        return back()->withErrors('محصول مورد نظر به سبد خرید شما افزوده شد.با مرجعه به بخش سبد خرید میتوانید سفارشات خود را کامل کنید');
+        session()->flash('flash_message', 'محصول مورد نظر به سبد خرید شما افزوده شد.با مرجعه به بخش سبد خرید میتوانید سفارشات خود را کامل کنید');
+
+        return back();
 
 
     }
@@ -58,6 +59,8 @@ class CartController extends Controller
         Session::save();
         Session::put('order', $orders);
 
+        session()->flash('flash_message', 'محصول مورد نظر از سبد خرید شما حذف شد');
+
         return back()->with([
             'products' => Session::get('order.product'),
             'count' => Session::get('order.count'),
@@ -65,7 +68,7 @@ class CartController extends Controller
 
     }
 
-    public function checkout(Request $request)
+    public function checkout(CartCheckoutRequest $request)
     {
         $orders = collect();
         $totalPrice = 0;
@@ -118,7 +121,7 @@ class CartController extends Controller
             'payed_price' => $request->get('total_discount_price') + $request->get('send_price'),
             'products' => $products,
             'order_status' => '1',
-            'shop_id' =>  $request->get('shop_id')[0],
+            'shop_id' => $request->get('shop_id')[0],
             'address' => $request->get('address'),
             'payment_flag' => 'waiting',
             'desc' => $request->get('desc'),
@@ -126,15 +129,16 @@ class CartController extends Controller
             'send_time' => $request->get('send_time'),
             'facture_flag' => $request->get('facture_flag') ? true : false,
             'payment_type' => $request->get('payment_type'),
-            'user_id' =>1,
+            'user_id' => auth()->id(),
         ]);
-        dd($order);
 
         if ($order) {
             Session::forget('order');
             Session::save();
-            return redirect(route('cart.show'))->withErrors('سفارش شما با موفقیت ثبت شد');
+            session()->flash('flash_message', 'سفارش شما با موفقیت ثبت شد');
+
+            return redirect(route('cart.show'));
         } else
-            return back()->withErrors('سفارش شما ثبت نشد');
+            return back()->withErrors('خطا در ثبت سفارش');
     }
 }

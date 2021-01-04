@@ -2,6 +2,9 @@
 @section('title')
     سبد خرید
 @stop
+@section('navbar')
+    @include('navbar')
+@stop
 @section('content')
 
     <div class="row">
@@ -26,10 +29,15 @@
                         @csrf
                         @if($products)
                             @foreach($products as $key=>$product)
+                                <?php
+                                if ($product->photos){
+                                    $photo = explode(';', $product->photo)[0];
+                                }
+                                ?>
 
                                 <tr>
                                     <td class="text-center"><a><img
-                                                src="image/product/samsung_tab_1-50x75.jpg"
+                                                src="/{{$product->photos ? $photo : '' }}"
                                                 alt="{{$product->title}}" title="{{$product->title}}"
                                                 class="img-thumbnail"/></a>
                                     </td>

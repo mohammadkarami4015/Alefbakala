@@ -12,7 +12,7 @@ class ShopController extends Controller
     {
         $shops = Shop::query()->where('admin_verification', 'on')
             ->where('status', 'on')
-            ->latest()->paginate(20);
+            ->latest()->get();
 
         $groups = Group::query()->orderBy('title', 'asc')->get();
 
@@ -21,7 +21,6 @@ class ShopController extends Controller
 
     public function details(Shop $shop)
     {
-        auth()->loginUsingId(1);
         if (auth()->user()->id !== $shop->id) {
             $shop->count_view = $shop->count_view + 1;
             $shop->save();

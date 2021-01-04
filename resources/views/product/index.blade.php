@@ -1,4 +1,7 @@
 @extends('main')
+@section('navbar')
+    @include('navbar')
+@stop
 @section('content')
     <div id="content" class="col-sm-12">
         <h1 class="title">محصولات</h1>
@@ -38,13 +41,17 @@
         <div class="row products-category">
 
             @foreach($products as $product)
+                <?php
+                if ($product->photos)
+                    $photo = explode(';', $product->photos)[0];
+                ?>
                 <div class="product-layout product-grid col-lg-3 col-md-3 col-sm-4 col-xs-12">
                     <div class="product-thumb">
                         <div style="min-height: 200px;max-height: 350px" class="image"><a href="{{route('product.details',[$shop,$product])}}"><img
-                                    src="/image/product/samsung_tab_1-220x330.jpg" alt="{{$product->title}}"
+                                    src="/{{$photo}}" alt="{{$product->title}}"
                                     title="{{$product->title}}" class="img-responsive"/></a></div>
                         <div class="caption">
-                            <h4><a href="product.html">{{$product->title}}</a></h4>
+                            <h4><a >{{$product->title}}</a></h4>
                             <p class="price"><span class="price-new">{{$product->price_with_discount}} تومان</span> <span
                                     class="price-old">{{$product->price}} تومان</span>
 

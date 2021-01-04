@@ -2,6 +2,9 @@
 @section('title')
     بازار
 @stop
+@section('navbar')
+    @include('navbar')
+@stop
 @section('content')
     <div id="content" class="col-sm-12">
         <h1 class="title">فروشگاه ها</h1>
@@ -64,6 +67,7 @@
 
         </div>
 
+        {{$shops->appends(Request::all())->links()}}
     </div>
 
 @stop

@@ -7,16 +7,14 @@ use App\Models\Group;
 use App\Models\Order;
 use App\Models\Setting;
 use App\Models\Shop;
-use App\Models\User;
-use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
 
     public function init()
     {
+        $user = auth()->user();
         $settings = Setting::all();
-        $user = User::query()->find(1);
         $groups = Group::query()->orderBy('title', 'asc')->get();
         //$countries = CountryResource::collection(Country::orderBy('title','asc')->get());
         $new_shops = Shop::query()->where('admin_verification', 'on')->where('status', 'on')->orderBy('id', 'desc')->get()->take(10);
@@ -54,7 +52,7 @@ class UserController extends Controller
 
     public function profile()
     {
-        $user = User::query()->find(1);
+        $user = auth()->user();
 
         $orders = Order::query()->where('user_id', $user->id)->orderByDesc('id')->get();
 

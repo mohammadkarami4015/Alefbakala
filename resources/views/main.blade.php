@@ -40,29 +40,14 @@
     <!-- Header End-->
         <!-- Main آقایانu Start-->
 
-        <nav id="menu" class="navbar">
-            <div class="navbar-header"><span class="visible-xs visible-sm"> منو <b></b></span></div>
-            <div class="container">
-                <div class="collapse navbar-collapse navbar-ex1-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a class="home_link" title="خانه" href="{{route('home')}}">خانه</a></li>
-                        <li class="dropdown"><a href="{{route('shop.all')}}">بازار</a>
-                        <li class="dropdown"><a href="{{route('cart.show')}}">سبد خرید</a>
-                        <li class="dropdown"><a href="{{route('user.profile')}}">پروفایل</a>
-                        <li class="dropdown"><a href="{{route('shop.all')}}">نقشه</a>
-
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </nav>
+       @yield('navbar')
 
         <!-- Main آقایانu End-->
     </div>
     <div id="container">
 
         <div class="container">
+            @include('flash')
             @include('error')
 
             <div class="row">
@@ -93,6 +78,7 @@
 <script type="text/javascript" src="/js/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/js/jquery.easing-1.3.min.js"></script>
 <script type="text/javascript" src="/js/jquery.dcjqaccordion.min.js"></script>
+
 @yield('script')
 <script type="text/javascript" src="/js/owl.carousel.min.js"></script>
 <script type="text/javascript" src="/js/custom.js"></script>

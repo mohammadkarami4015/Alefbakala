@@ -2,6 +2,9 @@
 @section('title')
 @stop
 
+@section('navbar')
+    @include('navbar')
+@stop
 
 @section('content')
     <div id="container" style="margin-right: 10%">
@@ -33,7 +36,7 @@
                                     <div class="slideshow single-slider owl-carousel ">
                                         @foreach($photos as $photo)
                                             <div class="item"><a href=""><img class="img-responsive"
-                                                                              src="{{$photo}}"
+                                                                              src="/{{$photo}}"
                                                                               alt="{{$product->title}}"/></a></div>
                                         @endforeach
                                     </div>

@@ -2,6 +2,9 @@
 @section('title')
     سبد خرید
 @stop
+@section('navbar')
+    @include('navbar')
+@stop
 @section('content')
 
     <div class="row">
@@ -43,12 +46,13 @@
                                     <td class="text-left"><a href="#">{{$order['product']->title}}</a><br/>
                                         <small> موجودی: {{$order['product']->inventory}}</small>
                                     </td>
+                                    <td class="text-right">{{\App\Models\Shop::query()->find($order['shop_id'])->title}}</td>
                                     <td class="text-left">
                                         <div class="input-group btn-block quantity">
                                             {{$order['count']}}
                                         </div>
                                     </td>
-                                    <td class="text-right">{{\App\Models\Shop::query()->find($order['shop_id'])->title}}</td>
+
                                     <td class="text-right">{{$order['product']->price}}تومان</td>
                                     <td class="text-right">{{$order['total_price']}}تومان</td>
                                     <td class="text-right">{{$order['total_price_with_discount']}}تومان</td>
@@ -130,7 +134,7 @@
                                     <label class="col-sm-4 control-label" for="input-coupon">هزینه ارسال را وارد کنید
                                     </label>
                                     <div class="input-group col-sm-8">
-                                        <input required type="text" name="send_price" value=""
+                                        <input required type="number" name="send_price" value=""
                                                placeholder="هزینه ارسال" id="input-coupon"
                                                class="form-control"/>
                                         <span class="input-group-btn">
@@ -175,7 +179,7 @@
                                 <div class="panel-body">
                                     <label class="col-sm-4 control-label" for="input-coupon">ارسال فاکتور توسط فروشگاه
                                     </label>
-                                    <div class="input-group col-sm-2">
+                                    <div class="input-group col-sm-1">
                                         <input type="checkbox" name="facture_flag" value="true"
                                                placeholder="آدرس" id="input-coupon"
                                                class="form-control"/>
@@ -246,7 +250,7 @@
                 </div>
                 <div class="buttons">
                     <div class="pull-right"><button type="submit" class="btn btn-primary">ثبت سفارش</button></div>
-                    <div class="pull-left"><a href="index.html" class="btn btn-default"> برگشت</a></div>
+                    <div class="pull-left"><a href="" class="btn btn-default"> برگشت</a></div>
                 </div>
             </div>
             <!--Middle Part End -->

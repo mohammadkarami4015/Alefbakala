@@ -1,4 +1,4 @@
-<h3 class="subtitle">دسته بندی ها - <a class="viewall" href="category.html">نمایش همه</a></h3>
+<h3 class="subtitle">دسته بندی ها - <a class="viewall" href="">نمایش همه</a></h3>
 <div class="owl-carousel latest_category_carousel">
     @foreach($groups as $group)
         <div class="product-thumb ">
@@ -28,7 +28,7 @@
                 <div class="product-thumb clearfix">
                     <div  style="min-height: 200px;max-height: 350px"  class="image">
                         <a href="{{route('shop.details',$shop)}}"><img
-                                src="image/product/FinePix-Long-Zoom-Camera-220x330.jpg" alt="{{$shop->title}}"
+                                src="/{{$shop->logo}}" alt="{{$shop->title}}"
                                 title="{{$shop->title}}" class="img-responsive"/></a></div>
                     <div class="caption">
                         <h4> {{$shop->title}}</h4>
@@ -54,7 +54,7 @@
             @foreach($highest_rate_shops['items'] as $shop)
                 <div class="product-thumb clearfix">
                     <div  style="min-height: 200px;max-height: 350px"  class="image"><a href="{{route('shop.details',$shop)}}"><img
-                                src="image/product/FinePix-Long-Zoom-Camera-220x330.jpg" alt="{{$shop->title}}"
+                                src="/{{$shop->logo}}" alt="{{$shop->title}}"
                                 title="{{$shop->title}}" class="img-responsive"/></a></div>
                     <div class="caption">
                         <h4>{{$shop->title}}</h4>
@@ -79,7 +79,7 @@
             @foreach($most_viewed_shops['items'] as $shop)
                 <div class="product-thumb clearfix">
                     <div  style="min-height: 200px;max-height: 350px"  class="image"><a href="{{route('shop.details',$shop)}}"><img
-                                src="image/product/FinePix-Long-Zoom-Camera-220x330.jpg" alt="{{$shop->title}}"
+                                src="/{{$shop->logo}}" alt="{{$shop->title}}"
                                 title="{{$shop->title}}" class="img-responsive"/></a></div>
                     <div class="caption">
                         <h4>{{$shop->title}}</h4>
@@ -97,12 +97,13 @@
     </div>
 </div>
 
-<h3 class="subtitle"> جدید ترین ها - <a class="viewall" href="category.html"> نمایش همه </a></h3>
+<h3 class="subtitle"> جدید ترین ها - <a class="viewall" href=""> نمایش همه </a></h3>
 <div class="owl-carousel latest_category_carousel">
     @foreach($new_shops['items'] as $shop)
         <div class="product-thumb clearfix">
+
             <div  style="min-height: 200px;max-height: 350px"  class="image"><a href="{{route('shop.details',$shop)}}"><img
-                        src="image/product/FinePix-Long-Zoom-Camera-220x330.jpg" alt="{{$shop->title}}"
+                        src="/{{$shop->logo}}" alt="{{$shop->title}}"
                         title="{{$shop->title}}" class="img-responsive"/></a></div>
             <div class="caption">
                 <h4>{{$shop->title}}</h4>
@@ -119,12 +120,12 @@
 
 
 
-<h3 class="subtitle"> محبوب ترین ها - <a class="viewall" href="category.html"> نمایش همه </a></h3>
+<h3 class="subtitle"> محبوب ترین ها - <a class="viewall" href=""> نمایش همه </a></h3>
 <div class="owl-carousel latest_category_carousel">
     @foreach($highest_rate_shops['items'] as $shop)
         <div class="product-thumb clearfix">
             <div  style="min-height: 200px;max-height: 350px"  class="image"><a href="{{route('shop.details',$shop)}}"><img
-                        src="image/product/FinePix-Long-Zoom-Camera-220x330.jpg" alt="{{$shop->title}}"
+                        src="/{{$shop->logo}}" alt="{{$shop->title}}"
                         title="{{$shop->title}}" class="img-responsive"/></a></div>
             <div class="caption">
                 <h4>{{$shop->title}}</h4>
@@ -140,12 +141,12 @@
 
 </div>
 
-<h3 class="subtitle"> پربازدید ترین - <a class="viewall" href="category.html"> نمایش همه </a></h3>
+<h3 class="subtitle"> پربازدید ترین - <a class="viewall" href=""> نمایش همه </a></h3>
 <div class="owl-carousel latest_category_carousel">
     @foreach($most_viewed_shops['items'] as $shop)
         <div class="product-thumb clearfix">
             <div  style="min-height: 200px;max-height: 350px"  class="image"><a href="{{route('shop.details',$shop)}}"><img
-                        src="image/product/FinePix-Long-Zoom-Camera-220x330.jpg" alt="{{$shop->title}}"
+                        src="/{{$shop->logo}}" alt="{{$shop->title}}"
                         title="{{$shop->title}}" class="img-responsive"/></a></div>
             <div class="caption">
                 <h4>{{$shop->title}}</h4>

@@ -26,6 +26,8 @@ class OrderRequest extends FormRequest
         return [
             'products' => 'required|array',
             'counts' => 'required|array',
+            'send_price'=>'required|numeric',
+            'total_discount_price'=>'required|numeric'
         ];
     }
 }

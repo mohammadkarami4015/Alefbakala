@@ -1,6 +1,9 @@
 @extends('main')
 @section('title')
 @stop
+@section('navbar')
+    @include('navbar')
+@stop
 @section('content')
     <div id="container" style="margin-right: 10%">
         <div class="container">
@@ -30,9 +33,9 @@
                                     <!-- Slideshow Start-->
                                     <div class="slideshow single-slider owl-carousel ">
                                         @foreach($photos as $photo)
-                                        <div class="item"><a href=""><img class="img-responsive"
-                                                                           src="{{$photo}}"
-                                                                           alt="{{$shop->title}}"/></a></div>
+                                            <div class="item"><a href=""><img class="img-responsive"
+                                                                              src="{{$photo}}"
+                                                                              alt="{{$shop->title}}"/></a></div>
                                         @endforeach
                                     </div>
                                     <!-- Slideshow end-->
@@ -40,7 +43,8 @@
                             </div>
                             <div class="col-sm-11">
                                 <ul class="list-unstyled description">
-                                    <li style="font-size: 16px"><b>عنوان :</b> <span itemprop="brand"></span>{{$shop->title}}</li>
+                                    <li style="font-size: 16px"><b>عنوان :</b> <span
+                                            itemprop="brand"></span>{{$shop->title}}</li>
                                     <br>
                                     <li style="font-size: 16px"><b> تلگرام :</b> <span
                                             itemprop="mpn">{{$shop->telegram}}</span></li>
@@ -57,16 +61,20 @@
                                     @if($shop->working_hours)
                                         <?php
                                         $workTime = explode(';', $shop->working_hours);
-                                        $workday = explode(',', $workTime[0]);
-                                        $workinghour = explode(',', $workTime[1]);
+                                        if (is_array($workTime) && count($workTime) > 1) {
+                                            $workday = explode(',', $workTime[0]);
+                                            $workinghour = explode(',', $workTime[1]);
+                                        }
                                         ?>
-                                        <li style="font-size: 16px"><b>ساعت کاری:</b>
-                                            از <b>{{$workday[0]}}</b> ساعت <b>{{$workinghour[0]}}</b>
+                                        @if(is_array($workTime) && count($workTime) > 1 )
+                                            <li style="font-size: 16px"><b>ساعت کاری:</b>
+                                                از <b>{{$workday[0]}}</b> ساعت <b>{{$workinghour[0]}}</b>
 
-                                            تا <b> {{$workday[1]}} </b>
-                                            ساعت <b>{{$workinghour[1]}}</b>
+                                                تا <b> {{$workday[1]}} </b>
+                                                ساعت <b>{{$workinghour[1]}}</b>
 
-                                        </li>
+                                            </li>
+                                        @endif
                                     @endif
                                     <br>
                                     <li style="font-size: 16px"><b>وضعیت :</b> <span
@@ -94,7 +102,6 @@
                             <ul class="nav nav-tabs">
                                 <li class="active"><a href="#tab-description" data-toggle="tab">توضیحات</a></li>
                                 <li><a href="#tab-specification" data-toggle="tab">مشخصات</a></li>
-                                <li><a href="#tab-review" data-toggle="tab">بررسی (2)</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div itemprop="description" id="tab-description" class="tab-pane active">
@@ -106,11 +113,10 @@
                                     <div id="tab-specification" class="tab-pane">
                                     </div>
                                 </div>
-                                <div id="tab-review" class="tab-pane">
-                                </div>
+
                             </div>
                             <br>
-                            <h2 class="subtitle">دسته بندی ها - <a class="viewall" href="category.html">نمایش همه</a>
+                            <h2 class="subtitle">دسته بندی ها  <a class="viewall" ></a>
                             </h2>
                             <div class="owl-carousel latest_category_carousel">
                                 @foreach($shopCategories as $shopCategory)
@@ -133,10 +139,14 @@
                             <div class="owl-carousel related_pro">
 
                                 @foreach($products as $product)
+                                    <?php
+                                    if ($product->photos)
+                                        $photo = explode(';', $product->photo)[0];
+                                    ?>
                                     <div class="product-thumb">
                                         <div style="min-height: 200px;max-height: 350px" class="image"><a
                                                 href="{{route('product.details',[$shop,$product])}}"><img
-                                                    src="/image/product/samsung_tab_1-220x330.jpg"
+                                                    src="/{{$photo}}"
                                                     alt="{{$product->title}}"
                                                     title="{{$product->title}}" class="img-responsive"/></a></div>
                                         <div class="caption">
