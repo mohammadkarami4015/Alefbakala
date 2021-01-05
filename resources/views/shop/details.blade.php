@@ -9,14 +9,12 @@
         <div class="container">
             <!-- Breadcrumb Start-->
             <ul class="breadcrumb">
-                <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{route('home')}}"
-                                                                                  itemprop="url"><span itemprop="title"><i
+                <li itemscope><a href="{{route('home')}}"
+                                 itemprop="url"><span itemprop="title"><i
                                 class="fa fa-home"></i></span></a></li>
-                <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{route('shop.all')}}"
-                                                                                  itemprop="url"><span itemprop="title">بازار</span></a>
+                <li itemscope><a href="{{route('shop.all')}}"
+                                 itemprop="url"><span itemprop="title">بازار</span></a>
                 </li>
-                {{--                <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="product.html" itemprop="url"><span itemprop="title">لپ تاپ ایلین ور</span></a></li>--}}
-
             </ul>
 
 
@@ -24,7 +22,7 @@
             <div class="row">
                 <!--Middle Part Start-->
                 <div id="content" class="col-sm-9">
-                    <div itemscope itemtype="http://schema.org/محصولات">
+                    <div itemscope >
                         <h1 class="title" itemprop="name">{{$shop->title}}</h1>
                         <div class="row product-info">
                             <div class="col-sm-11">
@@ -116,7 +114,7 @@
 
                             </div>
                             <br>
-                            <h2 class="subtitle">دسته بندی ها  <a class="viewall" ></a>
+                            <h2 class="subtitle">دسته بندی ها <a class="viewall"></a>
                             </h2>
                             <div class="owl-carousel latest_category_carousel">
                                 @foreach($shopCategories as $shopCategory)

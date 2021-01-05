@@ -250,7 +250,7 @@
                 </div>
                 <div class="buttons">
                     <div class="pull-right"><button type="submit" class="btn btn-primary">ثبت سفارش</button></div>
-                    <div class="pull-left"><a href="" class="btn btn-default"> برگشت</a></div>
+
                 </div>
             </div>
             <!--Middle Part End -->

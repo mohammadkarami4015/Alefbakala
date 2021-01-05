@@ -21,12 +21,10 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 
-Route::prefix('auth')->group(function () {
+Route::get('/send-number', [LoginController::class, 'sendNumber'])->name('sendNumber');
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('loginForm');
+Route::post('/login', [LoginController::class, 'login'])->name('login');
 
-    Route::get('/send-number', [LoginController::class, 'sendNumber'])->name('sendNumber');
-    Route::get('/login', [LoginController::class, 'showLoginForm'])->name('loginForm');
-    Route::post('/login', [LoginController::class, 'login'])->name('login');
-});
 
 Route::middleware('auth:web')->group(function () {
 
@@ -34,8 +32,15 @@ Route::middleware('auth:web')->group(function () {
 
     Route::get('/profile', [UserController::class, 'profile'])->name('user.profile');
 
-    Route::prefix('/shop')->group(function () {
+    Route::prefix('/shops')->group(function () {
+
         Route::get('/', [ShopController::class, 'showAll'])->name('shop.all');
+
+        Route::get('/filter', [ShopController::class, 'filter'])->name('shop.filter');
+
+        Route::get('/products/filter', [ProductsController::class, 'filterByCategory']);
+
+        Route::get('/filter-group', [ShopController::class, 'filterByGroup'])->name('shop.filterByGroup');
 
         Route::prefix('/{shop}')->group(function () {
 
@@ -56,7 +61,7 @@ Route::middleware('auth:web')->group(function () {
 
         Route::post('/add', [CartController::class, 'add'])->name('cart.add');
 
-        Route::get('/delete/{id}', [CartController::class, 'delete'])->name('cart.delete');
+        Route::get('/delete', [CartController::class, 'delete'])->name('cart.delete');
 
         Route::post('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
 

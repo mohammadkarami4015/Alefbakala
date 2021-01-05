@@ -7,6 +7,7 @@ use App\Http\Requests\CartCheckoutRequest;
 use App\Http\Requests\OrderRequest;
 use App\Models\Order;
 use App\Models\Product;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
@@ -42,16 +43,20 @@ class CartController extends Controller
         ]);
     }
 
-    public function delete($id)
+    public function delete(Request $request)
     {
+        $id = $request->get('id');
+
         $orders['product'] = Session::get('order.product');
         $orders['count'] = Session::get('order.count');
+        $orders['shop_id'] = Session::get('order.shop_id');
 
         if (Session::get('order.product'))
             foreach ($orders['product'] as $key => $product) {
                 if ($product->id == $id) {
                     unset($orders['product'][$key]);
                     unset($orders['count'][$key]);
+                    unset($orders['shop_id'][$key]);
                 }
             }
 
@@ -61,7 +66,7 @@ class CartController extends Controller
 
         session()->flash('flash_message', 'محصول مورد نظر از سبد خرید شما حذف شد');
 
-        return back()->with([
+        return view('cart.delete',[
             'products' => Session::get('order.product'),
             'count' => Session::get('order.count'),
         ]);

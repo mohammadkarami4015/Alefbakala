@@ -39,7 +39,24 @@ class ProductsController extends Controller
             'product' => $product,
             'photos' => explode(';', $product->photos),
             'features' => explode(';', $product->features),
-            'category' =>ShopCategory::query()->find($product->shop_category_id) ? ShopCategory::query()->find($product->shop_category_id)->title  : '',
+            'category' => ShopCategory::query()->find($product->shop_category_id) ? ShopCategory::query()->find($product->shop_category_id)->title : '',
+        ]);
+    }
+
+    public function filterByCategory(Request $request)
+    {
+        $id = $request->get('cat_id');
+        /** @var  $shop  Shop */
+        $shop = Shop::query()->find($request->get('shop_id'));
+        if ($id == 0) {
+            $products = $shop->products()->latest()->get();
+        } else
+            $products = $shop->products()->where('shop_category_id', $id)->latest()->get();
+
+        return view('product.filter', [
+            'shop' => $shop,
+            'products' => $products,
+            'shopCategories' => $shop->shopCategories()->where('status', 'on')->get(),
         ]);
     }
 

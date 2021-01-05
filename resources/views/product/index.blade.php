@@ -7,12 +7,19 @@
         <h1 class="title">محصولات</h1>
 
         <h4 class="title">دسته بندی ها</h4>
+
         <div class="category-list row">
 
+            <div class="col-sm-2">
+                <ul class="list-item">
+                    <li><a style="color: #985f0d" onclick="filter({{$shop->id}},0)">همه دسته ها</a></li>
+                </ul>
+            </div>
+
             @foreach($shopCategories as $shopCategory)
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                     <ul class="list-item">
-                        <li><a style="color: #985f0d" href="#">{{$shopCategory->title}}</a></li>
+                        <li><a style="color: #985f0d" onclick="filter({{$shop->id}},{{$shopCategory->id}})">{{$shopCategory->title}}</a></li>
                     </ul>
                 </div>
             @endforeach
@@ -23,22 +30,12 @@
             <div class="row">
 
 
-                <div class="col-sm-2 text-right">
-                    <label class="control-label" for="input-sort">مرتب سازی :</label>
-                </div>
-                <div class="col-md-8 text-right">
-                    <select id="input-sort" class="form-control col-sm-7">
-                        <option value="" selected="selected"></option>
-                        <option value="">جدیدترین</option>
-                        <option value="">محبوب ترین</option>
-                        <option value="">پربازدید ترین</option>
-                    </select>
-                </div>
+
 
             </div>
         </div>
         <br>
-        <div class="row products-category">
+        <div id="result" class="row products-category">
 
             @foreach($products as $product)
                 <?php
@@ -84,4 +81,17 @@
 
     </div>
 
+@stop
+@section('script')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{!! asset('js/sweetalert.min.js') !!}"></script>
+    <script>
+        function filter(shop,catId) {
+
+            $.get(`/shops/products/filter`, {cat_id:catId , shop_id: shop}, function (result) {
+                $('#result').html(result)
+            });
+        }
+
+    </script>
 @stop

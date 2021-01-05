@@ -13,6 +13,7 @@
             <h1 class="title">سبد خرید</h1>
             <div class="table-responsive">
                 <form action="{{route('cart.checkout')}}" method="post">
+                    @csrf
                     <table class="table table-bordered">
                         <thead>
                         <tr>
@@ -24,13 +25,11 @@
 
                         </tr>
                         </thead>
-                        <tbody>
-
-                        @csrf
+                        <tbody id="result">
                         @if($products)
                             @foreach($products as $key=>$product)
                                 <?php
-                                if ($product->photos){
+                                if ($product->photos) {
                                     $photo = explode(';', $product->photo)[0];
                                 }
                                 ?>
@@ -54,7 +53,7 @@
                                             <span class="input-group-btn">
 
 
-                                        <a href="{{route('cart.delete',$product->id)}}" type="button"
+                                        <a onclick="del({{$product->id}})" type="button"
                                            data-toggle="tooltip" title="حذف" class="btn btn-danger"><i
                                                 class="fa fa-times-circle"></i></a>
                                 </span>
@@ -86,4 +85,16 @@
     </div>
 
 @stop
+@section('script')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{!! asset('js/sweetalert.min.js') !!}"></script>
+    <script>
+        function del(id) {
 
+            $.get(`/cart/delete`, {id: id}, function (result) {
+                $('#result').html(result)
+            });
+        }
+
+    </script>
+@stop
