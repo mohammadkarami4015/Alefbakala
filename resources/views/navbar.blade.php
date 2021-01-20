@@ -12,3 +12,9 @@
         </div>
     </div>
 </nav>
+<form action="{{route('shop.search')}}">
+    <div class="topnav">
+        <input name="value" style="width: 50%;margin: 2% 20% 0% 0%" type="text" placeholder="جستجو بر اساس نام فروشگاه">
+        <button style="border-radius: 15px" class="btn btn-sm btn-primary">جستجو</button>
+    </div>
+</form>

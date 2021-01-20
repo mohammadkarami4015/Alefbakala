@@ -19,21 +19,28 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3333628-39ae-41f2-810c-51f0ffafb8da" name="Default Changelist" comment="view resource">
-      <change afterPath="$PROJECT_DIR$/resources/views/cart/delete.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/product/filter.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/shop/filter.blade.php" afterDir="false" />
+    <list default="true" id="a3333628-39ae-41f2-810c-51f0ffafb8da" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ShopCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ShopCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Shop.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Shop.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/cache/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/cart/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cart/checkout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cart/delete.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cart/delete.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/cart/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cart/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/navbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/product/details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/product/details.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/product/filter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/product/filter.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/product/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/scrollBrand.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/scrollBrand.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/shop/details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/details.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/shop/filter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/filter.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/shop/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -178,7 +185,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="ToolWindowFavorites.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/product" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -228,8 +235,18 @@
       <workItem from="1609694022351" duration="12501000" />
       <workItem from="1609738843840" duration="11448000" />
       <workItem from="1609757539543" duration="5975000" />
-      <workItem from="1609822654896" duration="8925000" />
+      <workItem from="1609822654896" duration="9786000" />
+      <workItem from="1610279280384" duration="429000" />
+      <workItem from="1611146467589" duration="553000" />
     </task>
+    <task id="LOCAL-00001" summary="fix:ajax">
+      <created>1609832218263</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1609832218263</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +266,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="view resource" />
-    <option name="LAST_COMMIT_MESSAGE" value="view resource" />
+    <MESSAGE value="fix:ajax" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix:ajax" />
   </component>
 </project>

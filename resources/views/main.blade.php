@@ -23,7 +23,7 @@
     <!-- CSS Part End-->
 </head>
 <body>
-<div class="wrapper-wide">
+<div class="wrapper-wide"  style="background: #f8f8f8">
     <div id="header">
         <!-- Top Bar Start-->
         <nav id="top" class="htop">

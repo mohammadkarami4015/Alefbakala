@@ -2,11 +2,18 @@
 @section('title')
     alefbakala
 @stop
+<style>
+    #form_box{
+        margin:5% 15%;
+
+        box-shadow: 5px 2px 5px 5px #888888;
+    }
+</style>
 @section('content')
 
-    <div class="row">
-        <div class="col-sm-6" style="margin-right: 25%">
-            <div class="panel panel-default">
+    <div class="row" >
+        <div id="form_box" class="col-sm-8"  >
+            <div class="panel panel-default" style="background: #3a4459">
                 <div class="panel-heading">
                     <h4 class="panel-title"> فرم ورود</h4>
                 </div>
@@ -14,7 +21,7 @@
 
                 </div>
                 <div id="collapse-coupon" class="panel-collapse collapse in">
-                    <div class="panel-body" style="margin-right: 20%;">
+                    <div class="panel-body" >
                         <div class="card-body">
                             <form method="post" action="{{ route('login') }}">
                                 @csrf
@@ -87,7 +94,7 @@
                             if (value.length != 11) {
                                 alert('شماره تلفن را درست وارد کنید')
                             } else {
-                                $.get(`/auth/send-number`, {phone_number: value}, function (result) {
+                                $.get(`/send-number`, {phone_number: value}, function (result) {
                                     $('#getCode').html(result)
                                 });
                             }

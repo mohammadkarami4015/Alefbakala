@@ -10,14 +10,14 @@
 
         <div class="category-list row">
 
-            <div class="col-sm-2">
+            <div class="col-sm-2" style="border: 0.2px gray solid;margin-left: 1px;background: white">
                 <ul class="list-item">
                     <li><a style="color: #985f0d" onclick="filter({{$shop->id}},0)">همه دسته ها</a></li>
                 </ul>
             </div>
 
             @foreach($shopCategories as $shopCategory)
-                <div class="col-sm-2">
+                <div class="col-sm-2" style="border: 0.2px gray solid;margin-left: 1px;background: white">
                     <ul class="list-item">
                         <li><a style="color: #985f0d" onclick="filter({{$shop->id}},{{$shopCategory->id}})">{{$shopCategory->title}}</a></li>
                     </ul>
@@ -43,9 +43,9 @@
                     $photo = explode(';', $product->photos)[0];
                 ?>
                 <div class="product-layout product-grid col-lg-3 col-md-3 col-sm-4 col-xs-12">
-                    <div class="product-thumb">
+                    <div class="product-thumb" style=" margin-left: 20px;border: 1px double ; box-shadow: 2px 2px 2px 2px gray; min-height:350px ; max-height:450px;background: white">
                         <div style="min-height: 200px;max-height: 350px" class="image"><a href="{{route('product.details',[$shop,$product])}}"><img
-                                    src="/{{$photo}}" alt="{{$product->title}}"
+                                    src="{{$product->photos ? $photo : ''}}" alt="{{$product->title}}"
                                     title="{{$product->title}}" class="img-responsive"/></a></div>
                         <div class="caption">
                             <h4><a >{{$product->title}}</a></h4>

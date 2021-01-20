@@ -18,7 +18,6 @@
                     <table class="table table-bordered">
                         <thead>
                         <tr>
-                            <td class="text-center">تصویر</td>
                             <td class="text-left">نام محصول</td>
                             <td class="text-left">نام فروشگاه</td>
                             <td class="text-left">تعداد</td>
@@ -34,11 +33,7 @@
                             @foreach($orders as $key=>$order)
 
                                 <tr>
-                                    <td class="text-center"><a><img
-                                                src="/image/product/samsung_tab_1-50x75.jpg"
-                                                alt="{{$order['product']->title}}" title="{{$order['product']->title}}"
-                                                class="img-thumbnail"/></a>
-                                    </td>
+
                                     <input type="hidden" name="products[]" value="{{$order['product']->id}}">
                                     <input type="hidden" name="counts[]" value="{{$order['count']}}">
                                     <input type="hidden" name="shop_id[]" value="{{$order['shop_id']}}">

@@ -77,6 +77,15 @@ class ShopController extends Controller
 
         return view('shop.filter', ['shops' => $shops]);
     }
+    
+     public function search(Request $request)
+    {
+        $shops = Shop::Search($request->get('value'))->get();
+
+        $groups = Group::query()->orderBy('title', 'asc')->get();
+
+        return view('shop.index', ['shops' => $shops, 'groups' => $groups]);
+    }
 
 
 }

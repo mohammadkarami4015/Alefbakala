@@ -8,7 +8,7 @@
 
         <tr>
             <td class="text-center"><a><img
-                        src="/{{$product->photos ? $photo : '' }}"
+                        src="{{$product->photos ? $photo : '' }}"
                         alt="{{$product->title}}" title="{{$product->title}}"
                         class="img-thumbnail"/></a>
             </td>

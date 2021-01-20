@@ -198,6 +198,16 @@ class Shop extends Authenticatable
         $this->count_rate=$this->count_rate+1;
         $this->save();
     }
+    
+      public function scopeSearch($query, $value)
+    {
+        return $query->where('admin_verification', 'on')
+            ->where('status', 'on')->where(function ($query) use ($value) {
+                return $query->where('name', 'like', '%' . $value . '%')
+                    ->orWhere('title', 'like', '%' . $value . '%')
+                    ->orWhere('address', 'like', '%' . $value . '%');
+            });
+    }
 
 
 }

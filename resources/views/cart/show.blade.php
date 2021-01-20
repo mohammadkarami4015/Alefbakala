@@ -30,13 +30,16 @@
                             @foreach($products as $key=>$product)
                                 <?php
                                 if ($product->photos) {
-                                    $photo = explode(';', $product->photo)[0];
+                                    $photo = explode(';', $product->photos)[0];
+                                
                                 }
                                 ?>
 
                                 <tr>
                                     <td class="text-center"><a><img
-                                                src="/{{$product->photos ? $photo : '' }}"
+                                                src="{{$product->photos ? $photo : '' }}"
+                                                width="100px"
+                                                height="100px"
                                                 alt="{{$product->title}}" title="{{$product->title}}"
                                                 class="img-thumbnail"/></a>
                                     </td>
