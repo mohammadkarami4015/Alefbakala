@@ -58,4 +58,9 @@ class UserController extends Controller
 
         return view('profile', compact('orders'));
     }
+
+    public function contactus()
+    {
+        return view('contactUs');
+    }
 }

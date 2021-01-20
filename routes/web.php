@@ -28,13 +28,15 @@ Route::post('/login', [LoginController::class, 'login'])->name('login');
 
 Route::middleware('auth:web')->group(function () {
 
+    Route::get('/contactus', [UserController::class, 'contactus'])->name('contactus');
+
     Route::get('/', [UserController::class, 'init'])->name('home');
 
     Route::get('/profile', [UserController::class, 'profile'])->name('user.profile');
 
     Route::prefix('/shops')->group(function () {
-        
-         Route::get('/search', [ShopController::class, 'search'])->name('shop.search');
+
+        Route::get('/search', [ShopController::class, 'search'])->name('shop.search');
 
         Route::get('/', [ShopController::class, 'showAll'])->name('shop.all');
 

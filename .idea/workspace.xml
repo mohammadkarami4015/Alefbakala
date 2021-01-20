@@ -21,26 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a3333628-39ae-41f2-810c-51f0ffafb8da" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Shop.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Shop.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap/cache/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cart/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cart/checkout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cart/delete.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cart/delete.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cart/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cart/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/content.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/category.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/navbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/product/details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/product/details.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/product/filter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/product/filter.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/product/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/scrollBrand.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/scrollBrand.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shop/details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/details.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shop/filter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/filter.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shop/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -237,7 +222,7 @@
       <workItem from="1609757539543" duration="5975000" />
       <workItem from="1609822654896" duration="9786000" />
       <workItem from="1610279280384" duration="429000" />
-      <workItem from="1611146467589" duration="553000" />
+      <workItem from="1611146467589" duration="4842000" />
     </task>
     <task id="LOCAL-00001" summary="fix:ajax">
       <created>1609832218263</created>

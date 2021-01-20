@@ -66,6 +66,7 @@
         </div>
     </div>
 </div>
+@include('footer')
 
 <!--Footer End-->
 <!-- Twitter Side Block Start -->

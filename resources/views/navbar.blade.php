@@ -7,7 +7,7 @@
                 <li class="dropdown"><a href="{{route('shop.all')}}">بازار</a>
                 <li class="dropdown"><a href="{{route('cart.show')}}">سبد خرید</a>
                 <li class="dropdown"><a href="{{route('user.profile')}}">پروفایل</a>
-                <li class="dropdown"><a href="{{route('shop.all')}}">نقشه</a>
+                <li class="dropdown"><a href="{{route('contactus')}}">تماس با ما</a>
             </ul>
         </div>
     </div>
