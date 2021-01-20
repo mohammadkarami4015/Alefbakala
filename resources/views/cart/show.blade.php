@@ -31,7 +31,7 @@
                                 <?php
                                 if ($product->photos) {
                                     $photo = explode(';', $product->photos)[0];
-                                
+
                                 }
                                 ?>
 
@@ -100,4 +100,7 @@
         }
 
     </script>
+@stop
+@section('footer')
+    @include('footer')
 @stop

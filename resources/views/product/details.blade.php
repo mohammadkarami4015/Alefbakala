@@ -35,7 +35,7 @@
                                     <!-- Slideshow Start-->
                                     <div class="slideshow single-slider owl-carousel ">
                                         @foreach($photos as $photo)
-                                      
+
                                             <div class="item" style="max-height:400px; "><a href=""><img class="img-responsive"
                                                                               src="{{$photo}}"
                                                                               alt="{{$product->title}}"/></a></div>
@@ -151,4 +151,7 @@
                 <script type="text/javascript" src="/js/swipebox/lib/ios-orientationchange-fix.js"></script>
                 <script type="text/javascript" src="/js/swipebox/src/js/jquery.swipebox.min.js"></script>
 
+@stop
+@section('footer')
+    @include('footer')
 @stop

@@ -9,4 +9,7 @@
     @include('scrollBrand')
     @include('content')
 @stop
+@section('footer')
+    @include('footer')
+@stop
 

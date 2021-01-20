@@ -29,13 +29,13 @@
                                 <div class="image">
 
                                     <!-- Slideshow Start-->
-                                    
+
                                     <div class="slideshow single-slider owl-carousel ">
                                         @foreach($photos as $photo)
-                                       
+
                                             <div class="item" style="max-height:400px; "><a href=""><img class="img-responsive"
                                                                               src="{{$photo}}"
-                                                                              
+
                                                                               alt="{{$shop->title}}"/></a></div>
                                         @endforeach
                                     </div>
@@ -92,7 +92,7 @@
                                         <span class="">حداقل سفارش</span> <span
                                             itemprop="old-price">{{$shop->min_order_price}} تومان</span>
                                     <li></li>
-                                    <li class="price"> هزینه ارسال: {{$shop->send_prices   }}تومان</li> 
+                                    <li class="price"> هزینه ارسال: {{$shop->send_prices   }}تومان</li>
                                 </ul>
 
 
@@ -141,13 +141,13 @@
 
                                 @foreach($products as $product)
                                     <?php
-                                    
+
                                     if ($product->photos)
                                         $photo = explode(';', $product->photos)[0];
-                                      
+
                                     ?>
                                     <div class="product-thumb" style="width: 160px ;margin-left: 40px;border: 1px gray double ; box-shadow: 2px 2px 2px 2px gray; min-height:350px ; max-height:450px;background: white">
-                                        
+
                                         <div style="min-height: 200px;max-height: 350px" class="image"><a
                                                 href="{{route('product.details',[$shop,$product])}}"><img
                                                     src="{{$photo}}"
@@ -197,4 +197,8 @@
             <script type="text/javascript" src="/js/swipebox/lib/ios-orientationchange-fix.js"></script>
             <script type="text/javascript" src="/js/swipebox/src/js/jquery.swipebox.min.js"></script>
 
+@stop
+
+@section('footer')
+    @include('footer')
 @stop

@@ -100,3 +100,6 @@
         }
     </script>
 @stop
+@section('footer')
+    @include('footer')
+@stop
